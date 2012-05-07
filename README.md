@@ -48,7 +48,8 @@ ViewQuery query = SimpleHonDocumentFetcher.getQueryForAllDocsOrderedByUrl();
 
 
 // Grab the first page of 10 results
-Page<HonDocument> firstPage = dbConnector.queryForPage(query, PageRequest.firstPage(10), HonDocument.class);
+PageRequest firstPageRequest = PageRequest.firstPage(10);
+Page<HonDocument> firstPage = dbConnector.queryForPage(query, firstPageRequest, HonDocument.class);
 
 System.out.println("First page!");
 for (HonDocument document : firstPage) {
@@ -56,7 +57,8 @@ for (HonDocument document : firstPage) {
 }
 
 // Grab the second page of 10 results. And so on.
-Page<HonDocument> secondPage = dbConnector.queryForPage(query, firstPage.getNextPageRequest(), HonDocument.class);
+PageRequest secondPageRequest = firstPage.getNextPageRequest();
+Page<HonDocument> secondPage = dbConnector.queryForPage(query, secondPageRequest, HonDocument.class);
 
 System.out.println("Second page!");
 for (HonDocument document : secondPage) {
@@ -82,7 +84,9 @@ HonDocument [id=<someid>,
 	sourceMTime=1335767480, 
 	title=Some title of the page, 
 	url=http://original.url.com/somepage]
-	... [redacted] ...
+	...
+	...
+	...
 Second page!
 HonDocument [id=<someotherid>, 
 	rev=1-dcd65b10d6d2833d400de36d2594b8d9, 
@@ -98,7 +102,9 @@ HonDocument [id=<someotherid>,
 	sourceMTime=1335901707, 
 	title=Some title, 
 	url=http://the.url.com]
-	... [redacted] ...
+	...
+	...
+	...
 
 ```
 
