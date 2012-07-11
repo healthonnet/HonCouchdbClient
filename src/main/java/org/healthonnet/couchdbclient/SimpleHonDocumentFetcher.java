@@ -32,7 +32,7 @@ public class SimpleHonDocumentFetcher {
 	public static ViewQuery getQueryForAllDocsOrderedByUrl() {
 		
 		return new ViewQuery()
-				.designDocId("_design/projections")
+				.designDocId("_design/by_url")
 				.viewName("by_url")
 				.staleOk(true)
 				.includeDocs(true);
@@ -40,7 +40,7 @@ public class SimpleHonDocumentFetcher {
 	
 	public static ViewQuery getQueryForAllDocsWithLanguage(String language) {
 		return new ViewQuery()
-				.designDocId("_design/projections")
+				.designDocId("_design/by_language")
 				.viewName("by_language")
 				.staleOk(true)
 				.includeDocs(true)
