@@ -19,6 +19,11 @@ public class HonDocument {
 	@JsonProperty("_rev")
     private String rev;
 	
+	private String compressedContent;
+	private String beginDate;
+	private String endDate;
+	private String location;
+	private String domain;
 	private String contentMD5;
 	private String description;
 	private String host;
@@ -37,7 +42,6 @@ public class HonDocument {
 	@JsonIgnore
 	private String validateDocUpdate;
 			
-	@SuppressWarnings("unused")
 	@JsonIgnore		
 	private Map<Object, Object> facets;
 	
@@ -125,14 +129,60 @@ public class HonDocument {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	public String getDomain() {
+		return domain;
+	}
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+	
+	public String getBeginDate() {
+		return beginDate;
+	}
+	public void setBeginDate(String beginDate) {
+		this.beginDate = beginDate;
+	}
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+	
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
+	public String getCompressedContent() {
+		return compressedContent;
+	}
+	public void setCompressedContent(String compressedContent) {
+		this.compressedContent = compressedContent;
+	}
+	
+	public Map<Object, Object> getFacets() {
+		return facets;
+	}
+	public void setFacets(Map<Object, Object> facets) {
+		this.facets = facets;
+	}
 	@Override
 	public String toString() {
-		return "HonDocument [id=" + id + ", \n\trev=" + rev + ", \n\tcontentMD5="
-				+ contentMD5 + ", \n\tdescription=" + description + ", \n\thost="
-				+ host + ", \n\thtmlContent=" + htmlContent + ", \n\tlanguage="
-				+ language + ", \n\toutwardsLinks=" + outwardsLinks
-				+ ", \n\trelevancyScore=" + relevancyScore + ", \n\tsnippet=" + snippet
-				+ ", \n\tsourceMD5=" + sourceMD5 + ", \n\tsourceMTime=" + sourceMTime
-				+ ", \n\ttitle=" + title + ", \n\turl=" + url + "]";
+		return "HonDocument [id=" + id + ", \n\trev=" + rev
+				+ ", \n\tcompressedContent=" + compressedContent + ", \n\tbeginDate="
+				+ beginDate + ", \n\tendDate=" + endDate + ", \n\tlocation=" + location
+				+ ", \n\tdomain=" + domain + ", \n\tcontentMD5=" + contentMD5
+				+ ", \n\tdescription=" + description + ", \n\thost=" + host
+				+ ", \n\thtmlContent=" + htmlContent + ", \n\tlanguage=" + language
+				+ ", \n\toutwardsLinks=" + outwardsLinks + ", \n\trelevancyScore="
+				+ relevancyScore + ", \n\tsnippet=" + snippet + ", \n\tsourceMD5="
+				+ sourceMD5 + ", \n\tsourceMTime=" + sourceMTime + ", \n\ttitle="
+				+ title + ", \n\turl=" + url + ", \n\tvalidateDocUpdate="
+				+ validateDocUpdate + ", \n\tfacets=" + facets + "]";
 	}
+
 }
