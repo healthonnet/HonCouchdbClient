@@ -15,10 +15,10 @@ public class HonDocument {
 
 	@JsonProperty("_id")
 	private String id;
-	
+
 	@JsonProperty("_rev")
-    private String rev;
-	
+	private String rev;
+
 	private String compressedContent;
 	private String beginDate;
 	private String endDate;
@@ -36,15 +36,17 @@ public class HonDocument {
 	private long sourceMTime;
 	private String title;
 	private String url;
-	
+	private String countryCode;
+	private long alexaRank;
+
 	@SuppressWarnings("unused")
 	@JsonProperty("validate_doc_update")
 	@JsonIgnore
 	private String validateDocUpdate;
-			
-	@JsonIgnore		
+
+	@JsonIgnore
 	private Map<Object, Object> facets;
-	
+
 	public String getId() {
 		return id;
 	}
@@ -129,14 +131,28 @@ public class HonDocument {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	
+
 	public String getDomain() {
 		return domain;
 	}
 	public void setDomain(String domain) {
 		this.domain = domain;
 	}
-	
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+
+	public long getAlexaRank() {
+		return alexaRank;
+	}
+	public void setAlexaRank(long alexaRank) {
+		this.alexaRank = alexaRank;
+	}
+
 	public String getBeginDate() {
 		return beginDate;
 	}
@@ -149,21 +165,21 @@ public class HonDocument {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	
+
 	public String getLocation() {
 		return location;
 	}
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	
+
 	public String getCompressedContent() {
 		return compressedContent;
 	}
 	public void setCompressedContent(String compressedContent) {
 		this.compressedContent = compressedContent;
 	}
-	
+
 	public Map<Object, Object> getFacets() {
 		return facets;
 	}
@@ -178,6 +194,7 @@ public class HonDocument {
 				+ ", \n\tdomain=" + domain + ", \n\tcontentMD5=" + contentMD5
 				+ ", \n\tdescription=" + description + ", \n\thost=" + host
 				+ ", \n\thtmlContent=" + htmlContent + ", \n\tlanguage=" + language
+				+ ", \n\tcountryCode=" + countryCode + ", \n\talexaRank=" + alexaRank
 				+ ", \n\toutwardsLinks=" + outwardsLinks + ", \n\trelevancyScore="
 				+ relevancyScore + ", \n\tsnippet=" + snippet + ", \n\tsourceMD5="
 				+ sourceMD5 + ", \n\tsourceMTime=" + sourceMTime + ", \n\ttitle="
