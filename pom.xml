@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.healthonnet.couchdb</groupId>
 	<artifactId>hon-couchdb-client</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>HON CouchDB Client</name>
 	<url>https://github.com/HON-Khresmoi/HonCouchdbClient</url>
 
