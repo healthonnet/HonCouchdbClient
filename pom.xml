@@ -12,6 +12,11 @@
 		<url>http://www.healthonnet.org</url>
 	</organization>
 
+    <properties>
+        <maven.compiler.source>1.5</maven.compiler.source>
+        <maven.compiler.target>1.5</maven.compiler.target>
+    </properties>
+
 	<developers>
 		<developer>
 			<id>nolan</id>

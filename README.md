@@ -35,6 +35,12 @@ Example Usage
 -------------
 
 ```java
+import org.healthonnet.couchdbclient.data.*;
+import org.healthonnet.couchdbclient.*;
+import org.ektorp.*;
+
+...
+
 // Insert your top-secret username and password here!
 CouchDbConnector dbConnector = SimpleHonDocumentFetcher.createConnector("MY_USER_NAME", "MY_PASSWORD");
 
